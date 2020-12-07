@@ -1,4 +1,4 @@
-# aria-telegram-mirror-bot
+# aria-mirror-bot
 
 This is a Telegram bot that uses [aria2](https://github.com/aria2/aria2) to download files over BitTorrent / HTTP(S) and uploads them to your Google Drive. This can be useful for downloading from slow servers. Parallel downloading and download queuing are supported. There are some features to try to reduce piracy.
 
@@ -54,8 +54,8 @@ Aria-telegram-mirror-bot is now written in TypeScript. If you are migrating from
 2. Clone the repo:
 
    ```bash
-   git clone https://github.com/out386/aria-telegram-mirror-bot
-   cd aria-telegram-mirror-bot
+   git clone https://github.com/kiprox/aria-mirror-bot
+   cd aria-mirror-bot
    ```
 
 3. Run `npm install`
@@ -99,7 +99,7 @@ Aria-telegram-mirror-bot is now written in TypeScript. If you are migrating from
 
 11. Start the bot with `npm start`
 
-12. Open Telegram, and send `/mirror https://raw.githubusercontent.com/out386/aria-telegram-mirror-bot/master/README.md` to the bot.
+12. Open Telegram, and send `/mirror https://raw.githubusercontent.com/kiprox/aria-mirror-bot/master/README.md` to the bot.
 
 11. In the terminal, it'll ask you to visit an authentication URL. Visit it, grant access, copy the code on that page, and paste it in the terminal.
 
@@ -139,9 +139,13 @@ After the initial installation, use these instructions to (re)start the bot.
 
 ### Using tmux
 
-1. Start aria2 by running `./aria.sh`
-2. Start a new tmux session with `tmux new -s tgbot`, or connect to an existing session with `tmux a -t tgbot`. Running the bot inside tmux will let you disconnect from the server without terminating the bot. You can also use nohup instead.
-3. Start the bot with `npm start`
+- [x] Start aria2 by running `./aria.sh`
+- [x] Start a new tmux session with `tmux new -s tgbot` 
+  or connect to an existing session with `tmux a -t tgbot`.
+  Running the bot inside tmux will let you disconnect from the server without terminating the bot. You can also use nohup instead.
+- to kill session tmux run `tmux kill-session -t tgbot`
+
+- [x] Start the bot with `npm start`
 
 ### Using systemd
 
@@ -192,8 +196,3 @@ Run `git pull`, then run `tsc`. After compilation has finished, you can start th
 
 * **Cannot get public links for folders if using Shared Drives**: Shared Drives do not support sharing folders to non members. The download link the bot gives only works for members of the Shared drive. If you need public links, use `/mirrorTar` to mirror the folder as a single file instead.  
 <font size=2>This feature is planned. See [upcoming releases](https://support.google.com/a/table/7539891) (search for "Folder sharing in shared drives").</font>
-
-## License
-The MIT License (MIT)
-
-Copyright © 2020 out386
