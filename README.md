@@ -1,4 +1,4 @@
-![candro-bot](https://i.imgur.com/cghrEyw.png)
+![candro-bot.png](https://i.imgur.com/zzU5zys.png)
 
 # aria-mirror-bot
 
@@ -21,6 +21,8 @@ There is very little preventing users from using this to mirror pirated content.
 * `/cancelAll`: Cancel all mirroring tasks in all chats if a [SUDO_USERS](#Constants-description) member uses it, or cancel all mirroring tasks for a particular chat if one of that chat's admins use it. No one else can use this command.
 * `/list <filename>` : Send links to downloads with the `filename` substring in the name. In case of too many downloads, only show the most recent few. 
 * `/getfolder` : Send link of drive mirror folder.
+  
+![candro-bot](https://i.imgur.com/cghrEyw.png)  
 
 #### Notes
 
