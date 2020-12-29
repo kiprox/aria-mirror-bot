@@ -301,7 +301,7 @@ function sendStatusMessage(msg: TelegramBot.Message, keepForever?: boolean): Pro
     dlManager.deleteStatus(msg.chat.id);
   }
 
-  return new Promise(resolve => {
+  return new Promise<void>(resolve => {
     downloadUtils.getStatusMessage()
       .then(res => {
         if (keepForever) {
@@ -330,7 +330,7 @@ function sendStatusMessage(msg: TelegramBot.Message, keepForever?: boolean): Pro
 function updateAllStatus(): void {
   downloadUtils.getStatusMessage()
     .then(res => {
-      var staleStatusReply = 'ETELEGRAM: 400 Bad Request: message to edit not found';
+      var staleStatusReply = 'TELEGRAM: 400 Bad Request: message to edit not found';
 
       if (res.singleStatuses) {
         res.singleStatuses.forEach(status => {
